@@ -1,0 +1,760 @@
+# Build Request — GRID Property Advisors Website
+
+Build a complete, production-quality website for **GRID PROPERTY ADVISORS**, a Pakistan-based real estate advisory and property investment company.
+
+The attached files contain the company's approved website content, branding, images and property/listing information. **Use those files as the source of truth. Do not invent business information that is not provided.**
+
+The goal is to create a website that feels like a **premium real estate advisory and investment platform**, not a traditional Pakistani property dealer website.
+
+---
+
+## TECH STACK
+
+Use a modern, maintainable web stack.
+
+Preferred:
+
+* React
+* TypeScript
+* Tailwind CSS
+* Modern component architecture
+* Responsive design
+* Clean reusable components
+
+Use whatever additional libraries are appropriate for:
+
+* Animations
+* Icons
+* Forms
+* Image galleries
+* Filtering
+* UI interactions
+
+Keep the code organized and production-ready.
+
+---
+
+# BRAND
+
+Company:
+
+**GRID PROPERTY ADVISORS**
+
+Primary positioning:
+
+**Smart Property Decisions. Lasting Value.**
+
+GRID helps clients discover, evaluate and invest in selected real estate opportunities across Pakistan.
+
+GRID is an:
+
+**Authorized Sales Partner of Emaar Pakistan**
+
+Use the supplied GRID logo exactly as provided. Do not redesign or replace the logo.
+
+Use the supplied images and property listings where available.
+
+---
+
+# DESIGN DIRECTION
+
+Create a sophisticated, modern, editorial and architectural aesthetic.
+
+Think:
+
+**Premium real estate advisory firm + investment consultancy + modern property platform**
+
+The visual language should communicate:
+
+* Trust
+* Expertise
+* Premium property
+* Investment
+* Transparency
+* Professionalism
+
+Use:
+
+* Large architectural photography
+* Strong typography
+* Generous whitespace
+* Sophisticated grid layouts
+* Large editorial headlines
+* Dark and light section contrast
+* Subtle borders
+* Elegant image compositions
+* High-quality property imagery
+* Refined micro-interactions
+
+Avoid:
+
+* Generic real estate templates
+* Cheap-looking stock imagery
+* Excessive rounded cards
+* Excessive gradients
+* Glassmorphism
+* Cartoon-style icons
+* Overly colourful UI
+* Excessive shadows
+* Cluttered layouts
+* "AI-generated" looking design
+
+The final website should look like a serious, established property advisory company.
+
+---
+
+# GLOBAL NAVIGATION
+
+Create a sticky navigation bar.
+
+Navigation:
+
+**Home**
+**Properties**
+**Developers**
+**PM Home Financing**
+**About Us**
+**Contact Us**
+
+Primary CTA:
+
+**Explore Properties**
+
+Secondary CTA:
+
+**Talk to an Advisor**
+
+The navigation must work across desktop, tablet and mobile.
+
+On mobile use a clean hamburger menu.
+
+---
+
+# HOME PAGE
+
+Build the homepage in this exact order.
+
+## 1. HERO
+
+Create a large cinematic hero section using a supplied property/architecture image.
+
+Headline:
+
+**Smart Property Decisions.
+Lasting Value.**
+
+Supporting text:
+
+**Discover, evaluate and invest in selected real estate opportunities across Pakistan. GRID Property Advisors connects you with the right property, developer and strategy.**
+
+Buttons:
+
+**Explore Properties**
+
+**Talk to an Advisor**
+
+Include:
+
+**Authorized Sales Partner of Emaar Pakistan**
+
+Add subtle animations:
+
+* Text reveal
+* Image movement
+* Parallax
+* Button hover effects
+
+Do not make the animations excessive.
+
+---
+
+## 2. WHO WE ARE
+
+Create a premium editorial section using the supplied images.
+
+Heading:
+
+**Real Estate, Guided by Expertise.**
+
+Use the approved content from the attached files.
+
+Layout should be visually interesting rather than a basic two-column text block.
+
+CTA:
+
+**Learn More About GRID**
+
+---
+
+## 3. SERVICES
+
+Create an interactive services section.
+
+Services:
+
+* Residential Properties
+* Property Investment
+* Commercial Real Estate
+* Overseas Pakistani Services
+* Developer Project Sales
+* Property Advisory
+
+Use the supplied image for each service.
+
+Instead of six standard cards, create an interactive layout where selecting a service changes:
+
+* Image
+* Heading
+* Description
+
+Animate the transition smoothly.
+
+---
+
+## 4. FEATURED DEVELOPER
+
+Create a visually dramatic section for:
+
+**Emaar Pakistan**
+
+Heading:
+
+**A Name You Know.
+A Lifestyle You Can Own.**
+
+Supporting text:
+
+**Premium waterfront living in Karachi.**
+
+Use the supplied Emaar image.
+
+CTA:
+
+**View Projects**
+
+Use a large image and subtle parallax effect.
+
+---
+
+## 5. WHY GRID
+
+Heading:
+
+**Why GRID?**
+
+Create an editorial numbered layout.
+
+01 — Trusted Advice
+02 — Developer Access
+03 — Market Knowledge
+04 — Transparent Process
+05 — End-to-End Support
+
+Do not use generic icon cards.
+
+Use typography, numbers and whitespace.
+
+---
+
+## 6. INVESTMENT PHILOSOPHY
+
+Heading:
+
+**Don't Just Buy Property.
+Build a Portfolio.**
+
+Create a visually sophisticated investment section.
+
+Display:
+
+* Location
+* Developer Reputation
+* Entry Price
+* Payment Plan
+* Capital Growth Potential
+* Rental Potential
+* Exit Strategy
+
+Use the supplied supporting content.
+
+This should feel analytical and investment-focused.
+
+---
+
+## 7. PM HOME FINANCING
+
+Create a dedicated homepage section for:
+
+**Wazir-e-Azam Apna Ghar Program**
+
+Supporting heading:
+
+**Ghar Ho Tu Apna**
+
+Display the supplied key information:
+
+* Up to PKR 10 Million Financing
+* 5% Fixed Customer Pricing
+* House up to 10 Marla / 2720 sq ft
+* Flat up to 1500 sq ft
+* Up to 20 Years
+
+CTA:
+
+**Check My Options**
+
+Clearly explain that GRID provides property/advisory support and is **not the lender**.
+
+Use the supplied disclaimer.
+
+---
+
+## 8. PROPERTY LEAD FORM
+
+Create a high-conversion inquiry section.
+
+Heading:
+
+**Looking for the Right Property?**
+
+Fields:
+
+* Full Name
+* Phone / WhatsApp
+* Email
+* Interest
+* Budget
+* Preferred Location
+* Message
+
+Interest:
+
+* Residential
+* Commercial
+* Plot/Land
+* Investment
+* Emaar
+* Home Financing
+
+Budget:
+
+* Under 1 Crore
+* 1–3 Crore
+* 3–5 Crore
+* 5 Crore+
+* Not Decided
+
+Button:
+
+**Request a Call Back**
+
+Implement:
+
+* Required field validation
+* Email validation
+* Loading state
+* Success state
+* Error state
+
+---
+
+# PROPERTIES
+
+Create a fully functional property discovery page.
+
+Page heading:
+
+**Find the Right Property**
+
+Create filters for:
+
+* Property Type
+* Purpose
+* Location
+* Price Range
+* Developer
+* Bedrooms
+* Status
+
+Add search.
+
+Create responsive property cards.
+
+Each card should display:
+
+* Property image
+* Property name
+* Location
+* Property type
+* Price
+* Payment plan
+* Developer
+* Short description
+* View Property
+* Save/Favourite
+
+Implement working filtering and search.
+
+Include proper:
+
+* Loading state
+* Empty state
+* Error state
+
+Use the actual listings supplied in the files.
+
+**Do not invent property information.**
+
+---
+
+# PROPERTY DETAIL
+
+Create a reusable property detail page.
+
+Include:
+
+* Image gallery
+* Property title
+* Location
+* Developer
+* Price
+* Payment plan
+* Overview
+* Key features
+* Investment highlights
+* Available units
+* Inquiry form
+* WhatsApp CTA
+
+Create a premium property-detail experience.
+
+---
+
+# DEVELOPERS
+
+Create a Developers page.
+
+Feature:
+
+**Emaar Pakistan**
+
+Show the relationship clearly:
+
+**Authorized Sales Partner of Emaar Pakistan**
+
+Use the supplied developer/project information.
+
+Do not invent additional developers, partnerships, awards or statistics.
+
+---
+
+# PM HOME FINANCING PAGE
+
+Create a complete dedicated page for:
+
+**Wazir-e-Azam Apna Ghar Program**
+
+Use the approved content from the supplied files.
+
+Include:
+
+### Hero
+
+**Ghar Ho Tu Apna**
+
+### Program Overview
+
+### Key Features
+
+### Eligibility
+
+### What Can Be Financed
+
+* House
+* Apartment
+* Plot + Construction
+* Construction
+
+### How GRID Helps
+
+Create a six-step visual process:
+
+01 Understand Requirement
+02 Identify Suitable Properties
+03 Explain Options
+04 Coordinate Relevant Parties
+05 Documentation Guidance
+06 Transaction Support
+
+### Important Disclaimer
+
+Clearly explain:
+
+GRID does not approve financing.
+
+GRID does not disburse financing.
+
+Final financing approval is provided by the relevant lender.
+
+Eligibility and financing remain subject to applicable assessment, documentation and government/SBP rules.
+
+### Financing Inquiry Form
+
+Fields:
+
+* Name
+* WhatsApp
+* CNIC
+* Monthly Income
+* Employment Type
+* Preferred Property
+* Preferred Location
+* Estimated Budget
+
+CTA:
+
+**Check My Options**
+
+---
+
+# ABOUT US
+
+Create a premium About page.
+
+Hero:
+
+**Property Decisions.
+Guided With Purpose.**
+
+Include the supplied content for:
+
+### Who We Are
+
+### Vision
+
+### Mission
+
+### What We Do
+
+### Our Approach
+
+Visualize:
+
+**Listen → Analyse → Advise → Support**
+
+### Developer Network
+
+Include the supplied information about Emaar Pakistan.
+
+### Overseas Pakistanis
+
+Heading:
+
+**Invest in Pakistan From Wherever You Are.**
+
+Use the supplied content describing GRID's services for overseas Pakistanis.
+
+---
+
+# CONTACT
+
+Create a Contact page.
+
+Heading:
+
+**Let's Talk Property**
+
+Location:
+
+**Karachi, Pakistan**
+
+Create a contact form:
+
+* Name
+* Phone / WhatsApp
+* Email
+* Subject
+* Message
+
+Subject options:
+
+* Buy Property
+* Sell Property
+* Investment Advice
+* Emaar
+* Home Financing
+* Developer Partnership
+* Other
+
+CTA:
+
+**Send Message**
+
+Add a Karachi map placeholder.
+
+Do not invent an exact address, phone number or email.
+
+---
+
+# FOOTER
+
+Create a premium footer.
+
+GRID PROPERTY ADVISORS
+
+**Smart Investments. Trusted Advice.**
+
+Include working links:
+
+Home
+Properties
+Developers
+PM Home Financing
+About Us
+Contact Us
+
+Include service links.
+
+Social links:
+
+Facebook
+Instagram
+LinkedIn
+YouTube
+WhatsApp
+
+Only use actual URLs supplied in the source files.
+
+Include the supplied legal disclaimer.
+
+---
+
+# FUNCTIONAL REQUIREMENTS
+
+This must be a functional website, not a static mockup.
+
+Implement:
+
+* Client-side routing
+* Responsive navigation
+* Property search
+* Property filters
+* Property detail pages
+* Interactive service tabs
+* Image galleries
+* Forms
+* Form validation
+* Loading states
+* Success states
+* Error states
+* Empty states
+* Buttons with real interactions
+* Mobile navigation
+* Smooth scrolling
+* Scroll animations
+* Hover interactions
+* Save/favourite property interaction
+
+For forms, initially implement frontend validation and a clean submission flow. Structure the code so a backend/email/CRM can be connected later.
+
+Do not pretend that a form has actually sent an email if no backend integration exists.
+
+---
+
+# ANIMATION
+
+Use subtle premium animations.
+
+Good examples:
+
+* Fade and slide reveals
+* Text stagger
+* Image reveal
+* Image hover zoom
+* Subtle parallax
+* Button transitions
+* Navigation transitions
+* Page transitions
+* Smooth tab transitions
+
+Avoid:
+
+* Bouncing
+* Spinning
+* Excessive motion
+* Flashing
+* Distracting effects
+
+---
+
+# RESPONSIVE DESIGN
+
+The site must work beautifully on:
+
+* Large desktop
+* Standard desktop
+* Tablet
+* Mobile
+
+Pay particular attention to mobile.
+
+The mobile experience should be intentionally designed rather than simply shrinking the desktop layout.
+
+---
+
+# CONTENT RULE
+
+The attached files are the source of truth.
+
+Use their:
+
+* Content
+* Logo
+* Images
+* Property listings
+* Developer information
+* Financing information
+* Contact information
+* Disclaimers
+
+Do NOT fabricate:
+
+* Property prices
+* Addresses
+* Phone numbers
+* Emails
+* Developers
+* Partnerships
+* Awards
+* Testimonials
+* Investment returns
+* Financial guarantees
+* Government guarantees
+
+If information is missing, use an editable placeholder.
+
+---
+
+# FINAL QUALITY STANDARD
+
+Before considering the project complete, review the entire website as a senior UI/UX designer and frontend engineer.
+
+Fix:
+
+* Inconsistent spacing
+* Poor typography
+* Weak visual hierarchy
+* Broken layouts
+* Mobile issues
+* Overflow
+* Poor image cropping
+* Non-functional buttons
+* Broken navigation
+* Form issues
+* Accessibility problems
+
+The final result should feel like a **premium, modern Pakistani real estate advisory platform** suitable for presenting to serious property buyers, investors, developers and overseas Pakistanis.
+
+Do not stop at a homepage mockup.
+
+Build the complete website structure and make the interactions functional.

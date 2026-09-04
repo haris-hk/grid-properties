@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "GRID Property Advisors"
+description = "A premium property advisory website for discovering, evaluating, and inquiring about selected real estate opportunities across Pakistan."
+version = "1.0.0"
+id = "artifacts/grid-property-advisors"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20408
+
+[services.development]
+run = "pnpm --filter @workspace/grid-property-advisors run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/grid-property-advisors", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/grid-property-advisors/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20408"
+BASE_PATH = "/"

@@ -1,6 +1,6 @@
-# [Project name]
+# GRID Property Advisors
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Premium property advisory website for discovering, evaluating, and inquiring about selected real estate opportunities across Pakistan.
 
 ## Run & Operate
 
@@ -22,15 +22,20 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/grid-property-advisors/src/App.tsx` — routed website experience, local property dataset, filters, galleries, and inquiry flows
+- `artifacts/grid-property-advisors/src/index.css` — GRID visual system, typography, responsive utilities, and motion
+- `artifacts/grid-property-advisors/index.html` — base SEO metadata and document shell
+- `artifacts/grid-property-advisors/public/` — favicon and crawler metadata
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The first release is frontend-only so inquiries remain honest: forms validate locally and explicitly state that no message has been sent without a backend or CRM connection.
+- Missing source listings, brand assets, social URLs, legal text, and contact details are represented as editable placeholders rather than invented business information.
+- Wouter provides client-side routes for the public site and the site uses local property data until approved listing data is connected.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+The site presents GRID’s advisory positioning, services, Emaar Pakistan relationship, investment philosophy, PM Home Financing guidance, property discovery/filtering, property detail galleries, and validated inquiry paths.
 
 ## User preferences
 
