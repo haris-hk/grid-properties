@@ -1,0 +1,13 @@
+{
+  "name": "GRID Property Advisors",
+  "short_name": "GRID",
+  "description": "Discover, evaluate and invest in selected real estate opportunities across Pakistan.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eee9df",
+  "theme_color": "#183634",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

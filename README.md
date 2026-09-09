@@ -126,10 +126,16 @@ them as `/listings/your-file.jpg`. Any image path containing `floorplan` is
 rendered contained on white rather than cropped to fill, so drop new floor plans
 in with that word in the filename.
 
-**Logo.** `public/logo*.png` were generated from your logo file. The dark
-version is used on light backgrounds and the cream version on the dark green
-header and footer; `icon-512.png` and `apple-touch-icon.png` are the browser and
-phone icons.
+**Logo and icons.** `public/logo*.png` were generated from your logo file. The
+dark version is used on light backgrounds and the cream version on the dark
+green header and footer.
+
+The browser icons split by size on purpose. At 16px the full mark turns to mush
+— the outer frame, the G and the bars have too little room — so `favicon.ico`
+(16/32/48/64) uses just the skyline element from inside the mark, which stays
+legible in a tab. `icon-192.png`, `icon-512.png` and `apple-touch-icon.png` use
+the complete mark, since at those sizes every detail reads. `site.webmanifest`
+wires the large icons up for Android home screens.
 
 ---
 
