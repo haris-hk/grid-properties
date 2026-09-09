@@ -18,9 +18,11 @@ import {
 import { useFavorites } from '@/lib/use-favorites';
 import {
   company,
+  contact,
+  formatCrore,
+  formatPKR,
   hasPhone,
   hasWhatsApp,
-  contact,
   properties,
   telHref,
   whatsAppHref,
@@ -95,8 +97,12 @@ export function PropertyDetail() {
               <div className="relative h-[420px] overflow-hidden bg-[#183634] sm:h-[600px]">
                 <img
                   src={gallery[active]}
-                  alt={`${property.name} — image ${active + 1} of ${gallery.length}`}
-                  className="h-full w-full object-cover"
+                  alt={`${property.project} ${property.name} — image ${active + 1} of ${gallery.length}`}
+                  className={`h-full w-full ${
+                    gallery[active].includes('floorplan')
+                      ? 'bg-white object-contain p-3'
+                      : 'object-cover'
+                  }`}
                 />
                 {gallery.length > 1 && (
                   <>
@@ -129,7 +135,7 @@ export function PropertyDetail() {
               </div>
 
               {gallery.length > 1 && (
-                <div className="mt-3 grid grid-cols-3 gap-3">
+                <div className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-5">
                   {gallery.map((image, index) => (
                     <button
                       type="button"
@@ -147,7 +153,11 @@ export function PropertyDetail() {
                         src={image}
                         alt=""
                         loading="lazy"
-                        className="h-full w-full object-cover"
+                        className={`h-full w-full ${
+                          image.includes('floorplan')
+                            ? 'bg-white object-contain'
+                            : 'object-cover'
+                        }`}
                       />
                     </button>
                   ))}
@@ -174,23 +184,39 @@ export function PropertyDetail() {
                 </button>
               </div>
 
-              <h1 className="display-font mt-5 text-6xl leading-none">
-                {property.name}
+              <h1 className="display-font mt-5 text-5xl leading-none sm:text-6xl">
+                {property.project}
               </h1>
-              <p className="mt-4 text-sm text-[#183634]/55">
+              <p className="mt-3 text-base font-semibold text-[#183634]/75">
+                {property.name}
+                {property.floor !== '' && ` · ${property.floor}`}
+              </p>
+              <p className="mt-2 text-sm text-[#183634]/55">
                 {property.location}
+                {property.reference !== '' && (
+                  <span className="mono-font ml-3 text-[10px] uppercase tracking-[.12em] text-[#a26e3e]">
+                    Ref {property.reference}
+                  </span>
+                )}
+              </p>
+
+              <p className="display-font mt-7 text-4xl text-[#a26e3e]">
+                {formatCrore(property.priceValue)}
+              </p>
+              <p className="mono-font mt-1 text-[11px] text-[#183634]/50">
+                {formatPKR(property.priceValue)}
               </p>
 
               <div className="mt-10 border-y border-[#183634]/20 py-5">
                 <div className="grid grid-cols-2 gap-5 text-sm">
                   {(
                     [
-                      ['Price', property.price],
-                      ['Payment plan', property.plan],
                       ['Developer', property.developer],
-                      ['Status', property.status],
                       ['Bedrooms', property.bedrooms],
-                      ['Area', property.areaSqFt],
+                      ['Assigned area', `${property.areaSqFt} sq ft`],
+                      ['Handover', property.handover || '—'],
+                      ['Status', property.status],
+                      ['Payment plan', property.plan],
                     ] as Array<[string, string]>
                   ).map(([label, value]) => (
                     <span key={label}>
@@ -222,6 +248,34 @@ export function PropertyDetail() {
                     </li>
                   ))}
                 </ul>
+              )}
+
+              {property.areaBreakdown && (
+                <div className="mt-8">
+                  <h2 className="eyebrow text-[#a26e3e]">Area breakdown</h2>
+                  <dl className="mt-4 grid gap-2 text-sm">
+                    {(
+                      [
+                        ['Unit area', property.areaBreakdown.unit],
+                        ['Allocated common area', property.areaBreakdown.common],
+                        ['Allocated parking area', property.areaBreakdown.parking],
+                        ['Total assigned area', property.areaBreakdown.total],
+                      ] as Array<[string, string]>
+                    ).map(([label, value], index, all) => (
+                      <div
+                        key={label}
+                        className={`flex items-center justify-between border-b border-[#183634]/15 pb-2 ${
+                          index === all.length - 1
+                            ? 'border-b-0 font-semibold'
+                            : 'text-[#183634]/70'
+                        }`}
+                      >
+                        <dt>{label}</dt>
+                        <dd className="mono-font text-xs">{value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
               )}
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -264,30 +318,74 @@ export function PropertyDetail() {
         >
           <div className="mx-auto grid max-w-[1380px] gap-12 lg:grid-cols-2">
             <div>
-              <SectionLabel>Property notes</SectionLabel>
+              <SectionLabel>Payment plan</SectionLabel>
               <h2 className="display-font mt-5 text-5xl">
-                What to check <em>next.</em>
+                The schedule, <em>in full.</em>
               </h2>
-              <div className="mt-8 grid gap-3">
-                {(
-                  [
-                    ['Type', property.type],
-                    ['Purpose', property.purpose],
-                    ['Reference', property.id],
-                    ['Availability', property.status],
-                  ] as Array<[string, string]>
-                ).map(([label, value]) => (
-                  <div
-                    key={label}
-                    className="flex items-center justify-between border-b border-[#183634]/15 py-4 text-sm"
-                  >
-                    <span>{label}</span>
-                    <span className="mono-font text-[10px] text-[#a26e3e]">
-                      {value}
-                    </span>
+
+              {property.paymentPlan && property.paymentPlan.length > 0 ? (
+                <>
+                  <div className="mt-8 overflow-x-auto">
+                    <table
+                      data-testid="table-payment-plan"
+                      className="w-full min-w-[420px] border-collapse text-left text-sm"
+                    >
+                      <thead>
+                        <tr className="border-b border-[#183634]/25">
+                          {['Installment', 'Due', 'Share', 'Amount (PKR)'].map(
+                            (heading, index) => (
+                              <th
+                                key={heading}
+                                scope="col"
+                                className={`py-3 text-[10px] font-bold uppercase tracking-[.12em] text-[#183634]/50 ${
+                                  index === 3 ? 'text-right' : ''
+                                }`}
+                              >
+                                {heading}
+                              </th>
+                            ),
+                          )}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {property.paymentPlan.map((row) => (
+                          <tr
+                            key={row.label}
+                            className="border-b border-[#183634]/15"
+                          >
+                            <td className="py-3 font-semibold">{row.label}</td>
+                            <td className="py-3 text-[#183634]/70">{row.due}</td>
+                            <td className="py-3 text-[#183634]/70">
+                              {row.share}
+                            </td>
+                            <td className="mono-font py-3 text-right text-xs">
+                              {row.amount.toLocaleString('en-US')}
+                            </td>
+                          </tr>
+                        ))}
+                        <tr className="border-b-2 border-[#183634]/40">
+                          <td className="py-3 font-bold" colSpan={2}>
+                            Total
+                          </td>
+                          <td className="py-3 font-bold">100%</td>
+                          <td className="mono-font py-3 text-right text-xs font-bold">
+                            {property.priceValue.toLocaleString('en-US')}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
-                ))}
-              </div>
+                  <p className="mt-5 text-xs leading-6 text-[#183634]/55">
+                    Schedule as provided by the developer. Amounts, dates and
+                    availability are subject to change and confirmation at the
+                    time of booking.
+                  </p>
+                </>
+              ) : (
+                <p className="mt-8 text-sm leading-7 text-[#183634]/60">
+                  A payment schedule for this listing is available on request.
+                </p>
+              )}
             </div>
 
             <div className="border-[#183634]/15 lg:border-l lg:pl-12">

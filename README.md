@@ -85,27 +85,51 @@ So the site looks finished at every stage of filling it in.
 | Phone, WhatsApp, email, address, map, hours | `contact` object                |
 | Instagram / LinkedIn / YouTube / Facebook | `socials` object                  |
 | Company name, taglines, legal footer text | `company` object                  |
-| Property listings                         | `properties` array                |
-| Photography                               | `images` object                   |
+| Property listings and payment plans       | `properties` array                |
+| Shared page imagery                       | `images` object                   |
+| Brand logo files                          | `logos` object                    |
 
 **Contact details.** Fill in `contact.phone` and `contact.whatsapp` and the site
 grows a clickable phone link, a WhatsApp button on every listing, a floating
 WhatsApp button, and footer contact lines — all of which stay hidden while those
 fields are empty.
 
-**Listings.** The three entries currently in `properties` are samples, there to
-show that search, filtering and detail pages work. Replace them with real
-listings and set `SHOW_SAMPLE_NOTICE` to `false` to remove the banner on the
-Properties page. The filter dropdowns (type, purpose, location, developer,
-bedrooms, status) build themselves from whatever is in the array, so new
-listings become searchable with no other changes. `priceValue` is the plain
-number in PKR used for the price-band filter; `price` is the text shown to
-visitors.
+**Listings.** The three live listings are the Emaar Oceanfront units from the
+supplied brochures: Panorama Tower 2B.5 (30th floor), Panorama Tower 4B.1 (38th
+floor) and The Views Tower 2 4B.1 (30th floor). Each carries its real price,
+area breakdown, developer reference and full installment schedule.
 
-**Photography.** The site currently uses hotlinked Pexels stock images. Replace
-`images` with GRID's own photography before launch — put files in `public/` and
-reference them as `/your-photo.jpg`, or use an image CDN. Hotlinking a third
-party in production is fragile.
+To add a listing, copy an existing entry in the `properties` array and give it a
+unique `id` — that becomes its URL at `/properties/<id>`. The filter dropdowns
+(type, purpose, location, developer, bedrooms, status and price band) are all
+built from the array, so a new listing becomes searchable with no other changes.
+
+Two fields deserve care:
+
+- `priceValue` is the plain number in PKR. It drives both the displayed price
+  (shown as crore, with the exact figure beneath) and the price-band filter. If
+  your new listings fall outside the current bands, edit `priceBands` lower down
+  the file.
+- `paymentPlan` is optional. Supply it and the detail page renders the full
+  installment table with a checked total; omit it and the page says a schedule
+  is available on request.
+
+`purpose` is currently set to `Investment` on all three units, since they are
+being marketed as chance deals with a payment plan running to handover. Change
+it per listing to `Buy` or `Rent` if that reads better for a given unit.
+
+**Photography.** Every image on the site is served from `public/`, extracted
+from the developer brochures — project renders, the Oceanfront aerial and the
+three floor plans. Nothing is hotlinked from a third party, so the site has no
+external image dependency. Add new images to `public/listings/` and reference
+them as `/listings/your-file.jpg`. Any image path containing `floorplan` is
+rendered contained on white rather than cropped to fill, so drop new floor plans
+in with that word in the filename.
+
+**Logo.** `public/logo*.png` were generated from your logo file. The dark
+version is used on light backgrounds and the cream version on the dark green
+header and footer; `icon-512.png` and `apple-touch-icon.png` are the browser and
+phone icons.
 
 ---
 
@@ -113,7 +137,7 @@ party in production is fragile.
 
 ```
 api/inquiry.ts            Serverless function: validates and emails inquiries
-src/content/site.ts       ← all business content and listings
+src/content/site.ts       ← all business content, listings and payment plans
 src/App.tsx               Routes, page titles/meta, scroll handling
 src/components/
   layout.tsx              Header, footer, shell, shared link styles
@@ -121,6 +145,8 @@ src/components/
   error-boundary.tsx      Catches render errors without blanking the page
 src/pages/                One file per route
 src/lib/use-favorites.ts  Saved properties, persisted to the browser
+public/listings/          Project renders and floor plans
+public/logo*.png          Brand marks, light and dark variants
 src/index.css             Design tokens, typography, motion
 vercel.json               SPA routing + asset caching
 ```
@@ -147,14 +173,22 @@ vercel.json               SPA routing + asset caching
   says an advisor will explain how to share documents securely.
 - Unused dependencies (react-query, ~25 Radix packages, recharts, embla,
   react-hook-form and the rest of the unused shadcn set) were dropped. The
-  production bundle is ~270 kB, 82 kB gzipped.
+  production bundle is ~274 kB, 83 kB gzipped.
+
+## Known limitation: link previews
+
+Page titles and descriptions update per route in the browser, but this is a
+single-page app: a social or WhatsApp link preview scraper does not run
+JavaScript, so every URL previews with the homepage title and the default
+share image. If per-listing link previews matter for how GRID shares
+properties, that needs prerendering or server rendering, which is a change of
+approach rather than a setting. Worth raising before a big share campaign.
 
 ## Before you launch
 
 - [ ] Real contact details in `src/content/site.ts`
-- [ ] Real listings, and `SHOW_SAMPLE_NOTICE = false`
+- [ ] Listings reviewed against the developer's current price list before launch
 - [ ] `RESEND_API_KEY` and `INQUIRY_TO` set in Vercel, with a test submission received
-- [ ] GRID's own photography replacing the stock images
 - [ ] Approved legal/disclaimer wording in `company.legalNote`
 - [ ] Social profile URLs, or leave them blank to keep the icons hidden
 - [ ] Custom domain attached in Vercel
