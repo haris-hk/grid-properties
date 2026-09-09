@@ -105,7 +105,7 @@ function Header() {
   const [location] = useLocation();
   const isInnerPage = location !== '/';
 
-  // Close the mobile menu whenever the route changes, and never leave the
+  // Close the mobile  menu whenever the route changes, and never leave the
   // page scroll-locked behind an open menu.
   useEffect(() => {
     setOpen(false);
