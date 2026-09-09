@@ -7,6 +7,7 @@ import { useFavorites } from '@/lib/use-favorites';
 import {
   type Property,
   SHOW_SAMPLE_NOTICE,
+  formatCrore,
   priceBands,
   properties,
   unique,
@@ -66,18 +67,26 @@ export function PropertyCard({
 
       <div className="flex flex-1 flex-col p-6">
         <div className="eyebrow text-[#a26e3e]">
-          {property.type} · {property.purpose}
+          {property.bedrooms !== '—'
+            ? `${property.bedrooms} Bed · ${property.type}`
+            : `${property.type} · ${property.purpose}`}
         </div>
-        <h3 className="display-font mt-3 text-3xl">{property.name}</h3>
-        <p className="mt-2 text-xs text-[#183634]/55">{property.location}</p>
+        <h3 className="display-font mt-3 text-3xl leading-none">
+          {property.project}
+        </h3>
+        <p className="mt-2 text-xs font-semibold text-[#183634]/70">
+          {property.name}
+          {property.floor !== '' && ` · ${property.floor}`}
+        </p>
+        <p className="mt-1 text-xs text-[#183634]/55">{property.location}</p>
         <div className="mt-6 grid grid-cols-2 gap-3 border-y border-[#183634]/15 py-4 text-xs">
           <span>
             <b className="block text-[#183634]/45">Price</b>
-            {property.price}
+            {formatCrore(property.priceValue)}
           </span>
           <span>
-            <b className="block text-[#183634]/45">Developer</b>
-            {property.developer}
+            <b className="block text-[#183634]/45">Area</b>
+            {property.areaSqFt} sq ft
           </span>
         </div>
         <p className="mt-5 flex-1 text-xs leading-6 text-[#183634]/60">
@@ -162,7 +171,7 @@ export function Properties() {
 
     return properties.filter((property) => {
       const haystack =
-        `${property.name} ${property.location} ${property.developer} ${property.type}`.toLowerCase();
+        `${property.name} ${property.project} ${property.location} ${property.developer} ${property.type} ${property.reference}`.toLowerCase();
 
       if (needle && !haystack.includes(needle)) return false;
       if (type !== ANY.type && property.type !== type) return false;
@@ -254,7 +263,7 @@ export function Properties() {
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 data-testid="input-property-search"
-                placeholder="Search by name, location or developer"
+                placeholder="Search by project, location, developer or reference"
                 className="w-full bg-transparent text-sm outline-none placeholder:text-[#183634]/45"
               />
             </label>

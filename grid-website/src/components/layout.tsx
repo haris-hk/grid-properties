@@ -20,6 +20,7 @@ import {
   hasEmail,
   hasPhone,
   hasWhatsApp,
+  logos,
   mailHref,
   telHref,
   whatsAppHref,
@@ -79,9 +80,14 @@ export function ButtonLink({
 function Wordmark({ tone }: { tone: 'light' | 'dark' }) {
   return (
     <>
-      <span className="flex h-10 w-10 items-center justify-center border border-[#d6a365] font-mono text-xl font-medium text-[#d6a365]">
-        G
-      </span>
+      <img
+        src={tone === 'dark' ? logos.mark : logos.markLight}
+        alt=""
+        aria-hidden="true"
+        width={40}
+        height={40}
+        className="h-10 w-10 object-contain"
+      />
       <span className="leading-[.95]">
         <b className="block text-sm tracking-[.24em]">{company.shortName}</b>
         <small
@@ -235,9 +241,13 @@ function Footer() {
     <footer className="bg-[#132d2b] text-[#eee9df]">
       <div className="mx-auto grid max-w-[1380px] gap-12 px-5 py-16 lg:grid-cols-[1.4fr_.75fr_.75fr_1fr] lg:px-10 lg:py-24">
         <div>
-          <div className="mb-6 flex items-center gap-3">
-            <Wordmark tone="light" />
-          </div>
+          <img
+            src={logos.lockupLight}
+            alt={company.name}
+            width={168}
+            height={138}
+            className="mb-7 h-auto w-[168px]"
+          />
           <p className="max-w-xs whitespace-pre-line font-serif text-2xl leading-tight text-[#d6a365]">
             {company.footerTagline}
           </p>
