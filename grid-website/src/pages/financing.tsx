@@ -7,7 +7,7 @@ const PROGRAM_FACTS: Array<[string, string]> = [
   ['Customer pricing', '5% Fixed Customer Pricing'],
   ['House', 'Up to 10 Marla / 2720 sq ft'],
   ['Flat', 'Up to 1500 sq ft'],
-  ['Tenure', 'Up to 20 Years'],
+  ['Tenure', 'Up to 30 Years'],
   ['Financing', 'Subject to lender assessment'],
 ];
 
