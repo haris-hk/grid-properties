@@ -23,7 +23,8 @@
 
   "redirects": [
     {
-      "source": "https://www.gridpropertyadvisors.com",
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.gridpropertyadvisors.com" }],
       "destination": "https://www.gridpropertyadvisors.com/pm-home-financing",
       "statusCode": 301
     }
