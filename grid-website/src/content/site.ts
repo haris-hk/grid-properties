@@ -95,7 +95,7 @@ export interface Property {
 export const contact: ContactDetails = {
   // TODO: replace with GRID's real contact details.
   phone: '',
-  whatsapp: '',
+  whatsapp: '923102374070',
   email: '',
   addressLines: [],
   city: 'Karachi, Pakistan',
