@@ -7,14 +7,14 @@
  * Environment variables (set these in Vercel → Settings → Environment Variables):
  *
  *   RESEND_API_KEY   Required to actually send. Get one at resend.com.
- *   INQUIRY_TO       Required. Where inquiries are delivered,
- *                    e.g. "inquiries@gridpropertyadvisors.com".
+ *   INQUIRY_TO       Optional override for where inquiries are delivered.
+ *                    Defaults to "gridpropertyadvisors@gmail.com".
  *   INQUIRY_FROM     Optional. A verified sender on your Resend domain.
  *                    Defaults to "onboarding@resend.dev", which Resend allows
  *                    without domain verification but only delivers to the
  *                    address that owns the Resend account.
  *
- * If RESEND_API_KEY or INQUIRY_TO is missing, the endpoint responds 503 with
+ * If RESEND_API_KEY is missing, the endpoint responds 503 with
  * `{ configured: false }`. The site treats that honestly: it tells the visitor
  * the form is not connected yet and offers WhatsApp/email instead of pretending
  * the message was sent.
@@ -132,10 +132,10 @@ export default async function handler(
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.INQUIRY_TO;
+  const to = process.env.INQUIRY_TO?.trim() || 'gridpropertyadvisors@gmail.com';
   const from = process.env.INQUIRY_FROM ?? 'onboarding@resend.dev';
 
-  if (!apiKey || !to) {
+  if (!apiKey) {
     return json(
       {
         ok: false,

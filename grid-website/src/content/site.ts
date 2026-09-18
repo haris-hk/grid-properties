@@ -96,7 +96,7 @@ export const contact: ContactDetails = {
   // TODO: replace with GRID's real contact details.
   phone: '',
   whatsapp: '923102374070',
-  email: '',
+  email: 'gridpropertyadvisors@gmail.com',
   addressLines: [],
   city: 'Karachi, Pakistan',
   mapEmbedUrl: '',
