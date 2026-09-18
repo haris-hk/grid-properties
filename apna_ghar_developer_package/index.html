@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Wazir-e-Azam Apna Ghar Program | Housing Finance Guidance</title>
+  <meta name="description" content="Housing finance information and application guidance for the Wazir-e-Azam Apna Ghar Program.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <div class="brand">
+      <div class="brandmark">⌂</div>
+      <div><b data-i18n="brandTitle">Apna Ghar Program</b><small data-i18n="brandSub">Housing Finance Guidance</small></div>
+    </div>
+    <nav>
+      <a href="#features" data-i18n="navFeatures">Key Features</a>
+      <a href="#eligibility" data-i18n="navEligibility">Eligibility</a>
+      <a href="#role" data-i18n="navRole">How It Works</a>
+      <a href="#faq" data-i18n="navFaq">FAQs</a>
+    </nav>
+    <div class="lang-switch" aria-label="Language selector">
+      <button type="button" class="lang-btn active" data-lang="en">English</button>
+      <button type="button" class="lang-btn" data-lang="ur">اردو</button>
+    </div>
+    <a class="btn btn-outline whatsapp-top" href="https://wa.me/923005242220" data-i18n="whatsapp">WhatsApp Us</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" data-i18n="eyebrow">Wazir-e-Azam Housing Finance Scheme</span>
+      <h1><span data-i18n="heroLine1">Wazir-e-Azam</span><br><em data-i18n="heroLine2">Apna Ghar Program</em></h1>
+      <h2 data-i18n="tagline">“Ghar Ho Tu Apna”</h2>
+      <p data-i18n="heroDesc">A markup subsidy and risk-sharing program designed to make housing finance more accessible to eligible first-time homeowners.</p>
+      <div class="stats">
+        <div><strong>PKR 10M</strong><span data-i18n="maxFinancing">Max Financing</span></div>
+        <div><strong>5%</strong><span data-i18n="fixedPricing">Fixed Pricing</span></div>
+        <div><strong data-i18n="twentyYears">20 Years</strong><span data-i18n="financingTenor">Financing Tenor</span></div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="#apply" data-i18n="applyNow">Apply Now →</a>
+        <a class="btn btn-outline" href="https://wa.me/923005242220" data-i18n="whatsapp">WhatsApp Us</a>
+      </div>
+    </div>
+
+    <div class="hero-photo"><img src="assets/hero-family.jpg" alt="Family outside a home"></div>
+
+    <div class="form-card" id="apply">
+      <h3 data-i18n="formTitle">Apply for Apna Ghar Program</h3>
+      <p data-i18n="formSub">Fill in your details and our team will get in touch with you.</p>
+      <form id="leadForm">
+        <div class="two">
+          <label><span data-i18n="nameLabel">Name *</span><input name="name" required data-i18n-placeholder="namePlaceholder" placeholder="Enter your full name"></label>
+          <label><span data-i18n="phoneLabel">WhatsApp Number *</span><input name="phone" required placeholder="03XX XXXXXXX" pattern="03[0-9]{9}"></label>
+        </div>
+        <div class="two">
+          <label><span data-i18n="cnicLabel">CNIC *</span><input name="cnic" required placeholder="XXXXX-XXXXXXX-X" pattern="[0-9]{5}-[0-9]{7}-[0-9]"></label>
+          <label><span data-i18n="incomeLabel">Monthly Income *</span><input name="income" required data-i18n-placeholder="incomePlaceholder" placeholder="Monthly income"></label>
+        </div>
+        <div class="two">
+          <fieldset>
+            <legend data-i18n="firstOwnerLabel">First Time Owner? *</legend>
+            <label class="radio"><input type="radio" name="first_owner" value="Yes" required> <span data-i18n="yes">Yes</span></label>
+            <label class="radio"><input type="radio" name="first_owner" value="No"> <span data-i18n="no">No</span></label>
+          </fieldset>
+          <label><span data-i18n="employmentLabel">Employment Type *</span>
+            <select name="employment" required>
+              <option value="" data-i18n="select">Select</option>
+              <option value="Salaried" data-i18n="salaried">Salaried</option>
+              <option value="Self-employed" data-i18n="selfEmployed">Self-employed</option>
+              <option value="Business Owner" data-i18n="businessOwner">Business Owner</option>
+              <option value="Overseas Pakistani" data-i18n="overseasPakistani">Overseas Pakistani</option>
+            </select>
+          </label>
+        </div>
+        <div class="two">
+          <label><span data-i18n="propertyLabel">Preferred Property *</span>
+            <select name="property" required>
+              <option value="" data-i18n="select">Select</option>
+              <option value="House" data-i18n="house">House</option>
+              <option value="Apartment" data-i18n="apartment">Apartment</option>
+              <option value="Plot + Construction" data-i18n="plotConstruction">Plot + Construction</option>
+            </select>
+          </label>
+          <label><span data-i18n="locationLabel">Preferred Location</span><input name="location" data-i18n-placeholder="locationPlaceholder" placeholder="Preferred location"></label>
+        </div>
+        <div class="two">
+          <label><span data-i18n="budgetLabel">Estimated Budget</span><input name="budget" data-i18n-placeholder="budgetPlaceholder" placeholder="Estimated budget"></label>
+          <label><span data-i18n="cityLabel">City *</span><input name="city" required data-i18n-placeholder="cityPlaceholder" placeholder="Your city"></label>
+        </div>
+        <label><span data-i18n="emailLabel">Email (optional)</span><input type="email" name="email" data-i18n-placeholder="emailPlaceholder" placeholder="Email address"></label>
+        <button class="btn submit" type="submit" data-i18n="submitBtn">Submit Application — Apply Now →</button>
+        <small class="disclaimer" data-i18n="formDisclaimer">By submitting, you agree to be contacted by our team. We do not provide the loan directly; financing approval is made by the participating bank/HBFCL.</small>
+        <p class="success" id="success" hidden data-i18n="success">Thank you. Your details are ready to be sent to your CRM/API.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="container">
+    <h2 data-i18n="featuresTitle">Key Features</h2>
+    <p class="sub" data-i18n="featuresSub">Key scheme highlights. Confirm current terms with the participating financial institution.</p>
+    <div class="cards four">
+      <article><i>◉</i><h3>PKR 10,000,000</h3><b data-i18n="maximumFinancing">Maximum Financing</b><p data-i18n="maximumFinancingText">Maximum financing limit under the scheme.</p></article>
+      <article><i>%</i><h3>5%</h3><b data-i18n="fixedCustomerPricing">Fixed Customer Pricing</b><p data-i18n="fixedCustomerPricingText">Current end-user pricing under the revised scheme.</p></article>
+      <article><i>⌂</i><h3 data-i18n="housingSizeValue">10 Marla / 1,500 sq.ft.</h3><b data-i18n="housingSize">Eligible Housing Size</b><p data-i18n="housingSizeText">House up to 10 Marla; flat up to 1,500 sq.ft.</p></article>
+      <article><i>▣</i><h3 data-i18n="upTo20Years">Up to 20 Years</h3><b data-i18n="financingTenor">Financing Tenor</b><p data-i18n="tenorText">Long repayment tenor for manageable installments.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section tint" id="eligibility">
+  <div class="container split">
+    <div>
+      <h2 data-i18n="whoCanApply">Who Can Apply?</h2>
+      <p class="sub" data-i18n="whoCanApplySub">Designed for eligible first-time homeowners.</p>
+      <div class="cards three">
+        <article><i>1</i><h3 data-i18n="firstTimeHomeowner">First-Time Homeowner</h3><p data-i18n="firstTimeHomeownerText">Pakistani citizens holding a valid CNIC who do not currently own a housing unit in their name.</p></article>
+        <article><i>2</i><h3 data-i18n="overseasPakistanis">Overseas Pakistanis</h3><p data-i18n="overseasPakistanisText">Eligible Non-Resident Pakistanis holding NICOP/POC may also obtain financing, subject to applicable rules.</p></article>
+        <article><i>3</i><h3 data-i18n="bankApproval">Subject to Bank Approval</h3><p data-i18n="bankApprovalText">Eligibility is subject to scheme rules and the participating financial institution.</p></article>
+      </div>
+    </div>
+    <div>
+      <h2 data-i18n="financingUseTitle">What Can Financing Be Used For?</h2>
+      <p class="sub" data-i18n="financingUseSub">Subject to scheme rules and bank approval.</p>
+      <div class="cards four compact">
+        <article><i>⌂</i><h3 data-i18n="house">House</h3></article>
+        <article><i>▥</i><h3 data-i18n="apartment">Apartment</h3></article>
+        <article><i>⌁</i><h3 data-i18n="construction">Construction</h3></article>
+        <article><i>⌖</i><h3 data-i18n="plotConstruction">Plot + Construction</h3></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="role">
+  <div class="container">
+    <h2 data-i18n="roleTitle">What Is Our Role?</h2>
+    <p class="sub" data-i18n="roleSub">We don't provide the loan — we help you navigate the process and coordinate with relevant parties.</p>
+    <div class="cards six">
+      <article><i>01</i><h3 data-i18n="role1">Understand Your Requirement</h3></article>
+      <article><i>02</i><h3 data-i18n="role2">Identify Suitable Properties</h3></article>
+      <article><i>03</i><h3 data-i18n="role3">Explain the Options</h3></article>
+      <article><i>04</i><h3 data-i18n="role4">Coordinate With Relevant Parties</h3></article>
+      <article><i>05</i><h3 data-i18n="role5">Documentation Guidance</h3></article>
+      <article><i>06</i><h3 data-i18n="role6">Transaction Support</h3></article>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="container trust-grid">
+    <div><b data-i18n="trust1">✓ Trusted Guidance</b><span data-i18n="trust1Sub">Clear and honest information</span></div>
+    <div><b data-i18n="trust2">▣ Your Information Is Safe</b><span data-i18n="trust2Sub">Privacy-conscious handling</span></div>
+    <div><b data-i18n="trust3">☎ Dedicated Support</b><span data-i18n="trust3Sub">Help at every step</span></div>
+    <a class="btn light" href="#apply" data-i18n="applyNow">Apply Now →</a>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container faq">
+    <div><h2 data-i18n="faqTitle">Frequently Asked Questions</h2><p class="sub" data-i18n="faqSub">Common questions about the Apna Ghar Program.</p></div>
+    <div>
+      <details><summary data-i18n="faq1Q">Who can apply?</summary><p data-i18n="faq1A">Eligible first-time homeowners subject to scheme and lender criteria.</p></details>
+      <details><summary data-i18n="faq2Q">What documents are required?</summary><p data-i18n="faq2A">Requirements vary by applicant and lender. Your bank/HBFCL will confirm the final list.</p></details>
+      <details><summary data-i18n="faq3Q">How much financing is available?</summary><p data-i18n="faq3A">Up to the applicable scheme limit, subject to approval.</p></details>
+      <details><summary data-i18n="faq4Q">How long does the process take?</summary><p data-i18n="faq4A">Timing depends on verification, documentation, property and lender processing.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <div><b data-i18n="footerBrand">Apna Ghar Program Guidance</b><small data-i18n="footerBrandSub">Information & facilitation</small></div>
+    <div><b>0300 5242220</b><small data-i18n="getSupport">Get Support</small></div>
+    <div><b>info@starmarketingonline.com</b><small data-i18n="emailUs">Email Us</small></div>
+    <div><a href="#" data-i18n="terms">Terms & Conditions</a> · <a href="#" data-i18n="privacy">Privacy Policy</a> · <a href="#" data-i18n="disclaimerLink">Disclaimer</a></div>
+  </div>
+  <div class="container legal" data-i18n="legal">This is an information and facilitation platform. We do not provide the loan directly. Financing approval is made by participating bank/HBFCL under applicable scheme rules.</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
