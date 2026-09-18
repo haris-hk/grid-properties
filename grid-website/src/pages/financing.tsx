@@ -71,16 +71,11 @@ export function Financing() {
     <Shell>
       <main id="main" className="pt-28">
         <section className="relative overflow-hidden bg-[#183634] text-[#f7f1e7]">
-          <img
-            src="/images/apna-ghar-family.jpg"
-            alt="Family standing outside their home"
-            className="absolute inset-0 h-full w-full object-cover object-[64%_center]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#102b2a] via-[#183634]/90 to-[#183634]/15 lg:via-[#183634]/75" />
-          <div className="relative mx-auto grid min-h-[720px] max-w-[1380px] gap-12 px-5 pb-14 pt-20 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-10 lg:py-20">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#102b2a] via-[#183634] to-[#203f3c]" />
+          <div className="relative mx-auto grid min-h-[720px] max-w-[1380px] gap-10 px-5 pb-14 pt-20 lg:grid-cols-[.9fr_.62fr_1fr] lg:items-center lg:gap-7 lg:px-10 lg:py-20">
             <div className="max-w-2xl self-center">
               <SectionLabel light>Wazir-e-Azam Housing Finance Scheme</SectionLabel>
-              <h1 className="display-font mt-6 text-5xl leading-[.95] sm:text-7xl lg:text-[6.5rem]">
+              <h1 className="display-font mt-6 text-5xl leading-[.95] sm:text-7xl lg:text-[5.25rem]">
                 Wazir-e-Azam
                 <br />
                 <em className="text-[#d6a365]">Apna Ghar</em> Program
@@ -116,6 +111,15 @@ export function Financing() {
                 Check My Options
                 <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
               </a>
+            </div>
+
+            <div className="relative min-h-[480px] self-stretch overflow-hidden sm:min-h-[600px] lg:min-h-0">
+              <img
+                src="/images/apna-ghar-family.jpg"
+                alt="Family standing outside their home"
+                className="absolute inset-0 h-full w-full object-contain object-center"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#183634]/60 to-transparent" />
             </div>
 
             <div
@@ -183,11 +187,11 @@ export function Financing() {
                 ))}
               </div>
             </div>
-            <div className="relative h-[380px] overflow-hidden bg-[#183634] lg:h-[520px]">
+            <div className="relative aspect-[373/185] overflow-hidden bg-[#183634]">
               <img
                 src="/images/apna-ghar-house.jpg"
                 alt="Modern family home"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#183634] to-transparent px-7 pb-7 pt-24 text-[#eee9df]">
                 <p className="display-font text-3xl italic">A brighter future, together.</p>

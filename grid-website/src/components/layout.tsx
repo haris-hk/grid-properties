@@ -377,6 +377,19 @@ function Footer() {
 }
 
 /** Floating WhatsApp button — only rendered once a number is configured. */
+function WhatsAppIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="h-7 w-7"
+      fill="currentColor"
+    >
+      <path d="M12.04 2a9.84 9.84 0 0 0-8.43 14.91L2 22l5.22-1.57A9.94 9.94 0 1 0 12.04 2Zm0 17.95a8.08 8.08 0 0 1-4.12-1.13l-.3-.18-3.1.94.96-3.02-.2-.31a8.02 8.02 0 1 1 6.76 3.7Zm4.43-6.04c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.62.79-.76.95-.14.16-.28.18-.53.06-.24-.12-1.03-.38-1.96-1.21a7.36 7.36 0 0 1-1.36-1.69c-.14-.24-.02-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.41.08-.16.04-.3-.02-.42-.06-.12-.55-1.31-.75-1.8-.2-.47-.4-.41-.55-.42h-.46c-.16 0-.42.06-.65.3-.22.24-.84.83-.84 2.01 0 1.19.87 2.34.99 2.5.12.16 1.7 2.59 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.1.16 1.52.1.46-.07 1.44-.59 1.64-1.16.2-.58.2-1.07.14-1.17-.06-.1-.22-.16-.46-.28Z" />
+    </svg>
+  );
+}
+
 function WhatsAppFab() {
   if (!hasWhatsApp) return null;
   return (
@@ -388,9 +401,9 @@ function WhatsAppFab() {
       rel="noreferrer"
       aria-label="Chat with us on WhatsApp"
       data-testid="link-whatsapp-fab"
-      className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#183634] text-[#d6a365] shadow-lg transition-transform hover:-translate-y-0.5"
+      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-white/30 bg-[#25d366] text-white shadow-[0_12px_30px_rgba(10,45,35,.3)] transition-transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-[#d6a365] focus:ring-offset-2"
     >
-      <MessageCircle size={20} />
+      <WhatsAppIcon />
     </a>
   );
 }
