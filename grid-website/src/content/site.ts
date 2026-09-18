@@ -100,7 +100,7 @@ export const contact: ContactDetails = {
   addressLines: [],
   city: 'Karachi, Pakistan',
   mapEmbedUrl:
-    'https://www.google.com/maps?q=Grid%20Property%20Advisors&output=embed&z=17',
+    'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3170.001365890956!2d-122.08397492413437!3d37.389799972084916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzfCsDIzJzIzLjMiTiAxMjLCsDA0JzUzLjAiVw!5e0!3m2!1sen!2s!4v1789720714329!5m2!1sen!2s',
   hours: '',
 };
 
