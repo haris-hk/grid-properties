@@ -71,8 +71,20 @@ export function Financing() {
     <Shell>
       <main id="main" className="pt-28">
         <section className="relative overflow-hidden bg-[#183634] text-[#f7f1e7]">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#102b2a] via-[#183634] to-[#203f3c]" />
-          <div className="relative mx-auto grid min-h-[720px] max-w-[1380px] gap-10 px-5 pb-14 pt-20 lg:grid-cols-[.9fr_.62fr_1fr] lg:items-center lg:gap-7 lg:px-10 lg:py-20">
+          <picture className="absolute inset-x-0 top-0 block h-[760px] w-full lg:inset-0 lg:h-full">
+            <source
+              media="(min-width: 1024px)"
+              srcSet="/images/apna-ghar-family-hero-wide.jpg"
+            />
+            <img
+              src="/images/apna-ghar-family.jpg"
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-cover object-[50%_42%] lg:object-[80%_center]"
+            />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#102b2a]/95 via-[#183634]/45 to-[#102b2a]/85" />
+          <div className="relative mx-auto grid min-h-[1120px] max-w-[1380px] gap-12 px-5 pb-14 pt-20 lg:min-h-[820px] lg:grid-cols-[.92fr_1.08fr] lg:items-center lg:px-10 lg:py-20 xl:min-h-[900px]">
             <div className="max-w-2xl self-center">
               <SectionLabel light>Wazir-e-Azam Housing Finance Scheme</SectionLabel>
               <h1 className="display-font mt-6 text-5xl leading-[.95] sm:text-7xl lg:text-[5.25rem]">
@@ -113,18 +125,9 @@ export function Financing() {
               </a>
             </div>
 
-            <div className="relative min-h-[480px] self-stretch overflow-hidden sm:min-h-[600px] lg:min-h-0">
-              <img
-                src="/images/apna-ghar-family.jpg"
-                alt="Family standing outside their home"
-                className="absolute inset-0 h-full w-full object-contain object-center"
-              />
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#183634]/60 to-transparent" />
-            </div>
-
             <div
               id="apply"
-              className="self-end border border-white/25 bg-[#eee9df]/95 p-6 text-[#183634] shadow-2xl backdrop-blur-md sm:p-8 lg:ml-auto lg:max-w-[560px]"
+              className="self-center border border-white/25 bg-[#eee9df]/95 p-6 text-[#183634] shadow-2xl backdrop-blur-md sm:p-8 lg:ml-auto lg:max-w-[500px]"
             >
               <SectionLabel>Financing inquiry</SectionLabel>
               <h2 className="display-font mt-4 text-3xl">Apply for Apna Ghar</h2>
