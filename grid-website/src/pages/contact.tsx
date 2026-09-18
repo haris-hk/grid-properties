@@ -141,8 +141,9 @@ export function Contact() {
                 title={`${company.name} office location`}
                 src={contact.mapEmbedUrl}
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="mt-10 h-64 w-full border-0 grayscale"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="mt-10 h-72 w-full border-0 grayscale sm:h-80"
               />
             ) : (
               <div className="mt-10 flex h-48 items-center justify-center border border-dashed border-[#183634]/30 bg-[#dce5dd]">
